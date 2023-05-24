@@ -226,7 +226,7 @@
 
 &qspi {
 	reg = <0xA0001000 0x1000>, <0x90000000 0x1000000>;
-	qflash0: w25q128fv@0 {
+	nor1: w25q128@0 {
 		#address-cells = <1>;
 		#size-cells = <1>;
 		compatible = "winbond,w25q128", "jedec,spi-nor";

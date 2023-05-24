@@ -64,8 +64,8 @@
 #define MK_STR(x)       STR1(x)
 #endif
 
-#define SPI_IMG_OFFSET               	SZ_128K  /* Kernel is stored in SPI Flash (offset at 128KB) */
-#define SPI_FDT_OFFSET                  SZ_8K    /* the first 8KB is used to save env in SPI Flash */
+#define SPI_IMG_OFFSET               	SZ_1M  /* Kernel is stored in SPI Flash (offset at 128KB) */
+#define SPI_FDT_OFFSET                  SZ_32K    /* the first 8KB is used to save env in SPI Flash */
 
 #define CUST_ENV_SETTINGS                                      \
         "serverip=192.168.10.128\0"                            \
@@ -106,6 +106,19 @@
 			BOOTENV
 
 #define CONFIG_DISPLAY_BOARDINFO
+
+/* NOTE:
+ * the spi flash IS nor1 NOT nor0, even the flash device is named "nor0" in dts
+ * the u-boot command "mtd" always show it is "nor1",
+ * may be "nor0" is for the stm32's internal flash
+ */
+#ifndef CONFIG_MTDIDS_DEFAULT
+#define CONFIG_MTDIDS_DEFAULT   "nor1=w25q128"
+#endif
+
+#ifndef CONFIG_MTDPARTS_DEFAULT
+#define CONFIG_MTDPARTS_DEFAULT "mtdparts=w25q128:32K(u-boot-env),128k(kernel-dtb),864k(reserved1),3m(kernel),8m(rootfs),4m(reserved2)"
+#endif
 
 /* For SPL */
 #ifdef CONFIG_SUPPORT_SPL

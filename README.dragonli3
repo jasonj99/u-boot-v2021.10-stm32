@@ -1,0 +1,3 @@
+NOTES for U-Boot on Dragonli3 board:
+(1) deactivate falcon mode in menuconfig.
+(2) burn spl/u-boot-spl.bin (0x08000000) and u-boot-dtb.bin (0x08008000) into STM32F746 main flash.

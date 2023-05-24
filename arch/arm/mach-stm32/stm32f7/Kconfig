@@ -5,4 +5,9 @@ config TARGET_STM32F746_DISCO
 
 source "board/st/stm32f746-disco/Kconfig"
 
+config TARGET_DRAGONLI3
+	bool "Dragonli3 STM32F746 board"
+
+source "board/st/dragonli3/Kconfig"
+
 endif

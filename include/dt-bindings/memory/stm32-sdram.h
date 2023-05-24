@@ -41,6 +41,7 @@
 #define TRC_6		(6 - 1)
 #define TWR_1		(1 - 1)
 #define TWR_2		(2 - 1)
+#define TRP_1		(1 - 1)
 #define TRP_2		(2 - 1)
 #define TRCD_1		(1 - 1)
 #define TRCD_2		(2 - 1)

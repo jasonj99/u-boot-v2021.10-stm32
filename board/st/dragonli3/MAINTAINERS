@@ -1,0 +1,7 @@
+Dragonli3 STM32F746 BOARD
+M:	JasonJ <jasonj@live.cn>
+S:	Maintained
+F:	board/st/dragonli3
+F:	include/configs/dragonli3.h
+F:	configs/dragonli3_defconfig
+F:	configs/dragonli3_defconfig

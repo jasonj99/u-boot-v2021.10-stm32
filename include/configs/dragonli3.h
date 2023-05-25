@@ -76,8 +76,7 @@
         "spisize=0\0"	                                       \
         "spiprobe=sf probe\0"                                  \
         "addip=setenv bootargs ${bootargs}"                    \
-        " ip=${ipaddr}:${serverip}:${gatewayip}:"              \
-        " ${netmask}:${hostname}:eth0:off\0"                   \
+        " ip=${ipaddr}:${serverip}:${gatewayip}:${netmask}:${hostname}:eth0:off\0"  \
         "flashboot=run args addip;run spiprobe;"               \
         " sf read ${kernel_addr_r} ${spiaddr} ${spisize};"     \
         " bootm ${kernel_addr_r}\0"                            \
@@ -113,7 +112,7 @@
  * may be "nor0" is for the stm32's internal flash
  */
 #ifndef CONFIG_MTDIDS_DEFAULT
-#define CONFIG_MTDIDS_DEFAULT   "nor1=w25q128"
+#define CONFIG_MTDIDS_DEFAULT   "nor0=w25q128"
 #endif
 
 #ifndef CONFIG_MTDPARTS_DEFAULT

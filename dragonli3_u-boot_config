@@ -299,7 +299,7 @@ CONFIG_AUTOBOOT_DELAY_STR=""
 CONFIG_AUTOBOOT_STOP_STR=" "
 # CONFIG_AUTOBOOT_KEYED_CTRLC is not set
 CONFIG_USE_BOOTARGS=y
-CONFIG_BOOTARGS="console=ttySTM0,115200n8 earlyprintk consoleblank=0 ignore_loglevel"
+CONFIG_BOOTARGS="console=ttySTM0,115200n8 earlyprintk consoleblank=0 ignore_loglevel root=/dev/mtdblock4 ro rootfstype=ext4 mtdparts=spi0.0:32k(u-boot-env),128k(kernel-dtb),864k(reserved1),3m(kernel),8m(rootfs),4m(reserved2)"
 # CONFIG_BOOTARGS_SUBST is not set
 # CONFIG_USE_BOOTCOMMAND is not set
 # CONFIG_USE_PREBOOT is not set
@@ -683,7 +683,7 @@ CONFIG_CMD_MTDPARTS=y
 # CONFIG_CMD_MTDPARTS_SPREAD is not set
 # CONFIG_CMD_MTDPARTS_SHOW_NET_SIZES is not set
 CONFIG_MTDIDS_DEFAULT="nor1=w25q128"
-CONFIG_MTDPARTS_DEFAULT="mtdparts=w25q128:32k(u-boot-env),128k(kernel-dtb),864k(reserved1),3m(kernel),8m(rootfs),4m(reserved2)"
+CONFIG_MTDPARTS_DEFAULT="w25q128:32k(u-boot-env),128k(kernel-dtb),864k(reserved1),3m(kernel),8m(rootfs),4m(reserved2)"
 # CONFIG_CMD_REISER is not set
 # CONFIG_CMD_ZFS is not set
 
